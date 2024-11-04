@@ -1,0 +1,123 @@
+main {
+  background-color: #212121;
+}
+
+@font-face {
+  font-family: 'Stardom-Regular';
+  src: url('./fonts/Stardom-Regular.eot') format('woff2'),
+       url('./fonts/Stardom-Regular.woff2') format('woff'),
+       url('./fonts/Stardom-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family:ClashDisplay-Medium;
+  src: url(./fonts/ClashDisplay-Medium.otf);
+}
+*::-webkit-scrollbar {
+  width: 10px;
+  background-color: black;
+}
+
+*::-webkit-scrollbar-thumb {
+  background:  linear-gradient(red,purple,yellow,white);
+  border-radius: 50px;
+  cursor: grab;
+  height: 50px;
+}
+.nav_left{
+  background-color: transparent;
+  mix-blend-mode: difference;
+}
+.text {
+  font-family: 'Stardom-Regular', sans-serif; 
+}
+.text h1 {
+  font-family: 'Stardom-Regular', sans-serif;
+}
+.text span:hover{
+  color: #FFD700;
+} 
+.intro{
+  border: white 5px solid;
+}
+.nav_left a{
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.nav_left a:hover{
+  color: #FFD700;
+}
+.show h1{
+  font-family: 'ClashDisplay-Medium', sans-serif;
+  font-size: 7vw;
+}
+.web{
+  background-color:
+}
+.web_left h1{
+  font-size: 5vw;
+}
+.web_btn{
+  font-size: 1.2vw;
+  border-radius: 20px;
+  padding: 5px 5px;
+  border: white 2px solid;
+}
+.web_right video{
+  border-top-right-radius: 50px;
+}
+.info h3{
+  position: relative;
+}
+.info h3::before{
+  content: "Amazon";
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  color: #212121;
+  z-index: -10;
+  -webkit-text-stroke: 1px #95c11e;
+}
+.info h3:hover {
+  zoom: 1.02;
+  transition: all ease-in-out 2s;
+  color: #FFD700;
+ }
+.marquee_v{
+  display: flex;
+  white-space: nowrap;
+  flex-direction: column;
+  margin-top: 100px;
+  overflow-x: hidden;
+  }
+.marquee_container{
+  display: hidden;
+ 
+  display: flex;
+  white-space: nowrap;
+  gap: 20px;
+  animation-name: scroller;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+ 
+}
+.marquee_a:hover .marquee{
+  display: flex;
+  transition: all ease-in 4s;
+
+}
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+@keyframes scroller {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}

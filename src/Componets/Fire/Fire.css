@@ -1,0 +1,21 @@
+@font-face {
+    font-family: 'Sugar peachy';
+    src: url(../../fonts/Sugar_peachy.otf) format('opentype');
+}
+
+.fire_text h1 {
+    font-family: 'Sugar peachy';
+    font-size: 5.5vw;
+}
+.fire_text h4{
+    font-size: 1.3vw;
+}
+.fire_text .spice{
+    color: #FF8549;
+}
+.fire_text button{
+    border-radius: 50px;
+    border: solid white 2px;
+    margin-top: 20px;
+    
+}
