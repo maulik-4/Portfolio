@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import fire from '../../assets/fire.png';
+import fire from '../../assets/Fire.png';
 import './Fire.css';
 
 function Fire() {
