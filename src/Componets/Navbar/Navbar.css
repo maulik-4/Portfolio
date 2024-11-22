@@ -1,0 +1,40 @@
+  
+.btn {
+    background-color: transparent;
+    color: #fff;
+    border: 1px solid #fff;
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    padding: 10px 20px; 
+    text-align: center;
+    transition: color 0.8s; 
+    z-index: 10;
+  }
+  
+  .btn::before {
+    content: "";
+    height: 0%;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: #fff;
+    transition: height 0.8s ease, border-radius 0.8s ease;
+    z-index: -1; 
+    border-radius: 100px;
+  }
+  
+  .btn:hover::before {
+    height: 100%;
+  }
+  
+  .btn:hover {
+    color: #000; 
+  }
+  

@@ -1,0 +1,9 @@
+.elem {
+    grid-row-start: var(--r);
+    grid-column-start: var(--c);
+    grid-row-end: calc(var(--r) + 1);
+    grid-column-end: calc(var(--c) + 1);
+  }
+  .proj{
+    z-index: 1;
+  }

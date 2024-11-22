@@ -1,0 +1,100 @@
+
+@font-face {
+    font-family: 'Stardom-Regular';
+    src: url('../../fonts/Stardom-Regular.eot') format('woff2'),
+         url('../../fonts/Stardom-Regular.woff2') format('woff'),
+         url('../../fonts/Stardom-Regular.ttf') format('truetype');
+  }
+  @font-face {
+    font-family:ClashDisplay-Medium;
+    src: url(../../fonts/ClashDisplay-Medium.otf);
+  }
+
+
+.text {
+    font-family: 'Stardom-Regular', sans-serif; 
+  }
+  .text h1 {
+    font-family: 'Stardom-Regular', sans-serif;
+  }
+  .text span:hover{
+    color: #FFD700;
+  } 
+  .intro{
+    border: white 5px solid;
+  }
+  .show h1{
+    font-family: 'ClashDisplay-Medium', sans-serif;
+    font-size: 7vw;
+  }
+  .web{
+    background-color:
+  }
+  .web_left h1{
+    font-size: 5vw;
+  }
+  .web_btn{
+    font-size: 1.2vw;
+    border-radius: 20px;
+    padding: 5px 5px;
+    border: white 2px solid;
+  }
+  .web_right video{
+    border-top-right-radius: 50px;
+  }
+  .info h3{
+    position: relative;
+  }
+  .info h3::before{
+    content: "Amazon";
+    position: absolute;
+    top: -6px;
+    left: -6px;
+    color: #212121;
+    z-index: -10;
+    -webkit-text-stroke: 1px #95c11e;
+  }
+  .info h3:hover {
+    zoom: 1.02;
+    transition: all ease-in-out 2s;
+    color: #FFD700;
+   }
+   
+.web_btn {
+  background-color: transparent;
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  padding: 10px 20px; 
+  text-align: center;
+  transition: color 0.8s; 
+  z-index: 1;
+}
+
+.web_btn::before {
+  content: "";
+  height: 0%;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: #fff;
+  transition: height 0.8s ease, border-radius 0.8s ease;
+  z-index: -1; 
+  border-radius: 100px;
+}
+
+.web_btn:hover::before {
+  height: 100%;
+}
+
+.web_btn:hover {
+  color: #000; 
+}

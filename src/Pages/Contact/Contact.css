@@ -1,0 +1,41 @@
+
+.marquee_v{
+    display: flex;
+    white-space: nowrap;
+    flex-direction: column;
+    margin-top: 100px;
+    overflow-x: hidden;
+    }
+  .marquee_container{
+    display: hidden;
+   
+    display: flex;
+    white-space: nowrap;
+    gap: 20px;
+    animation-name: scroller;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+   
+  }
+  .marquee_a:hover .marquee{
+    display: flex;
+    transition: all ease-in 4s;
+  
+  }
+  @keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  @keyframes scroller {
+    from {
+      transform: translateX(0%);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }

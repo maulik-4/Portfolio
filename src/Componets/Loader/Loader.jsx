@@ -2,15 +2,16 @@ import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 
 function Loader() {
-    // Use a ref to access the h1 element
+ 
     const loaderRef = useRef(null);
 
-    // Function to split the text content into spans
+  
     function textSplitter(element) {
         const targetedElement = element;
         let content = targetedElement.textContent;
         targetedElement.innerHTML = "";
 
+         // Disable scrolling
         const splittedTextcontent = content.split("");
         splittedTextcontent.forEach((letter) => {
             const span = document.createElement("span");
@@ -48,12 +49,13 @@ function Loader() {
                 opacity:0,
                 display: "none",   
             })
+           
         }
     }, []);
 
     return (
         <section className="loader z-20 absolute top-0 left-0  w-full h-screen bg-black text-white flex items-center justify-center">
-            <h1 ref={loaderRef} className="text-[5vw] font-extrabold">Great thing coming</h1>
+            <h1 ref={loaderRef} className="text-[5vw] font-extrabold">Great Thing Coming</h1>
         </section>
     );
 }
