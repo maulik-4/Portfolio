@@ -75,7 +75,7 @@ function Projects() {
     <div>
 
 <div className="proj w-full  h-[200vh] bg-[#212121] overflow-hidden  ">
-    <div className="grid grid-cols-3  grid-rows-20 w-full h-screen ">
+    <div className="grid grid-cols-3  grid-rows-16 w-full h-screen ">
     {/* <div className="elem" style={{ "--r": 1, "--c": 3 }}><img src={project1} className="w-full h-full object-cover" /></div> */}
 <div className="elem" style={{ "--r": 1, "--c": 7 }}><img src={project2} className="w-full h-full object-cover" /></div>
 <div className="elem" style={{ "--r": 2, "--c": 2 }}><img src={project3} className="w-full h-full object-cover" /></div>
@@ -92,14 +92,14 @@ function Projects() {
 <div className="elem" style={{ "--r": 7, "--c": 5 }}><img src={project12} className="w-full h-full object-cover" /></div>
 <div className="elem" style={{ "--r": 7, "--c": 8 }}><img src={project13}className="w-full h-full object-cover" /></div>
 <div className="elem" style={{ "--r": 8, "--c": 1 }}><img src={project14} className="w-full h-full object-cover" /></div>
-<div className="elem" style={{ "--r": 8, "--c": 4 }}><img src={project15} className="w-full h-full object-cover" /></div>
-<div className="elem" style={{ "--r": 9, "--c": 2 }}><img src={project16} className="w-full h-full object-cover" /></div>
+<div className="elem" style={{ "--r": 8, "--c": 4 }}><img src={project16} className="w-full h-full object-cover" /></div>
+
 
 
 
         </div>
       <div className="fixed top-[10vh]  left-0 w-screen text-center h-screen flex flex-col items-center justify-center bg-opacity-90 text-white">
-        <h1 className="text-[8vw] font-bold mb-6">Welcome to My World</h1>
+        <h1 className="Project_text text-[8vw] font-bold mb-6">Welcome to My World</h1>
         <p className="text-[3vw]">Explore the Beauty of Front End</p>
       </div>
      

@@ -53,7 +53,7 @@ function Home() {
     });
   }, []);
   return (
-    <div>
+    <div className='overflow-hidden'>
       <Loader/>
       <div className="div bg-black text-white">
       <div
