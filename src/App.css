@@ -39,9 +39,7 @@ html {
 .text span:hover{
   color: #FFD700;
 } 
-.intro{
-  border: white 5px solid;
-}
+
 .nav_left a{
   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }

@@ -54,7 +54,7 @@ function Home() {
   }, []);
   return (
     <div className='overflow-hidden'>
-      <Loader/>
+      {/* <Loader/> */}
       <div className="div bg-black text-white">
       <div
           id="intro"

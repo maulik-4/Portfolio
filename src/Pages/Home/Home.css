@@ -20,9 +20,7 @@
   .text span:hover{
     color: #FFD700;
   } 
-  .intro{
-    border: white 5px solid;
-  }
+  
   .show h1{
     font-family: 'ClashDisplay-Medium', sans-serif;
     font-size: 7vw;
