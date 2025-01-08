@@ -3,6 +3,9 @@ import Lenis from "@studio-freight/lenis";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "./Project.css";
+import CircleMouseFollower from '../../Componets/mousefollower/mousefollower';
+
+
 import project1 from "../../assets/projects/project1.png"
 import project2 from "../../assets/projects/project2.png"
 import project3 from "../../assets/projects/project3.png"
@@ -28,7 +31,7 @@ gsap.registerPlugin(ScrollTrigger);
 function Projects() {
   useEffect(() => {
   
-    // GSAP Animations
+    
     const elements = document.querySelectorAll(".elem");
     elements.forEach((elem) => {
       const image = elem.querySelector("img");
@@ -62,8 +65,6 @@ function Projects() {
           },
         });
     });
-
-    // Cleanup on unmount
     return () => {
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
      
@@ -75,6 +76,7 @@ function Projects() {
     <div>
 
 <div className="proj w-full  h-[200vh] bg-[#212121] overflow-hidden  ">
+<CircleMouseFollower xscale={.2} yscale={.2} />
     <div className="grid grid-cols-3  grid-rows-16 w-full h-screen ">
     {/* <div className="elem" style={{ "--r": 1, "--c": 3 }}><img src={project1} className="w-full h-full object-cover" /></div> */}
 <div className="elem" style={{ "--r": 1, "--c": 7 }}><img src={project2} className="w-full h-full object-cover" /></div>

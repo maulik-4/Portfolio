@@ -2,6 +2,7 @@ import React from 'react'
 import { useEffect } from 'react';
 import Loader from '../../Componets/Loader/Loader'
 import mine from '../../assets/mine.jpg'
+import CircleMouseFollower from '../../Componets/mousefollower/mousefollower';
 import { IoIosArrowForward, IoIosArrowRoundForward } from "react-icons/io";
 import home_video from "../../assets/homepage.mp4";
 import './Home.css'
@@ -55,11 +56,14 @@ function Home() {
   return (
     <div className='overflow-hidden'>
       <Loader/>
+       
       <div className="div bg-black text-white">
+      <CircleMouseFollower xscale={.2} yscale={.2} />
       <div
           id="intro"
           className="intro w-full h-screen  py-8 flex flex-col lg:flex-row gap-8 justify-center items-center"
         >
+          
           <div className="pic opacity-0">
             <img
               src={mine}

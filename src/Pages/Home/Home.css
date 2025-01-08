@@ -1,7 +1,7 @@
 
 @font-face {
     font-family: 'Stardom-Regular';
-    src: url('../../fonts/Stardom-Regular.eot') format('woff2'),
+    src: url('../../fonts/Stardom-Regular.eot') format('eot'),
          url('../../fonts/Stardom-Regular.woff2') format('woff'),
          url('../../fonts/Stardom-Regular.ttf') format('truetype');
   }
