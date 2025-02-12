@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import Loader from '../../Components/Loader/Loader';
 import mine from '../../assets/mine.jpg';
-import MouseFollower from '../../Components/mousefollower/MouseFollower';
+import MouseFollower from '../../Components/Mousefollower/MouseFollower';
 import { IoIosArrowForward } from "react-icons/io";
 import home_video from "../../assets/homepage.mp4";
 import './Home.css';
