@@ -1,5 +1,5 @@
 import React from 'react'
-import CircleMouseFollower from '../../Componets/mousefollower/mousefollower';
+import MouseFollower from '../../components/MouseFollower/MouseFollower'
 import { FaInstagram } from "react-icons/fa";
 import { CiLinkedin } from "react-icons/ci";
 import { SiGmail } from "react-icons/si";
@@ -8,7 +8,7 @@ import "./Contact.css"
 function Contact() {
   return (
     <div id="contact" className="h-screen w-full bg-[#212121] text-white">
-       <CircleMouseFollower xscale={.2} yscale={.2} />
+       <MouseFollower xscale={.2} yscale={.2} />
     <h1 className="text-[15vw] text-center  ">Contact Me</h1>
     <div className="slider_container flex flex-col overflow-hidden">
       <a href="" className="marquee_a relative h-[15vh]">

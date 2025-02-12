@@ -3,7 +3,7 @@ import Lenis from "@studio-freight/lenis";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "./Project.css";
-import CircleMouseFollower from '../../Componets/mousefollower/mousefollower';
+import MouseFollower from '../../Components/mousefollower/MouseFollower';
 
 
 import project1 from "../../assets/projects/project1.png"
@@ -22,8 +22,8 @@ import project13 from "../../assets/projects/project13.png"
 import project14 from "../../assets/projects/project14.png"
 import project15 from "../../assets/projects/project15.png"
 import project16 from "../../assets/projects/project16.png"
-import Loader from '../../Componets/Loader/Loader'
-import Fire from '../../Componets/Fire/Fire'
+import Loader from '../../Components/Loader/Loader'
+import Fire from '../../Components/Fire/Fire'
 import { div } from "framer-motion/client";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -76,7 +76,7 @@ function Projects() {
     <div>
 
 <div className="proj w-full  h-[200vh] bg-[#212121] overflow-hidden  ">
-<CircleMouseFollower xscale={.2} yscale={.2} />
+<MouseFollower xscale={.2} yscale={.2} />
     <div className="grid grid-cols-3  grid-rows-16 w-full h-screen ">
     {/* <div className="elem" style={{ "--r": 1, "--c": 3 }}><img src={project1} className="w-full h-full object-cover" /></div> */}
 <div className="elem" style={{ "--r": 1, "--c": 7 }}><img src={project2} className="w-full h-full object-cover" /></div>

@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react';
-import Loader from '../../Componets/Loader/Loader';
+import Loader from '../../Components/Loader/Loader';
 import mine from '../../assets/mine.jpg';
-import CircleMouseFollower from '../../Componets/mousefollower/mousefollower';
+import MouseFollower from '../../Components/mousefollower/MouseFollower';
 import { IoIosArrowForward } from "react-icons/io";
 import home_video from "../../assets/homepage.mp4";
 import './Home.css';
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import TypingEffect from '../../Componets/TypingEffect/TypingEffect';
+import TypingEffect from '../../Components/TypingEffect/TypingEffect';
 gsap.registerPlugin(ScrollTrigger);
 
 function Home() {
@@ -57,7 +57,7 @@ function Home() {
     <div className='overflow-hidden'>
       <Loader />
       <div className="div bg-black text-white">
-        <CircleMouseFollower xscale={.2} yscale={.2} />
+        <MouseFollower xscale={.2} yscale={.2} />
         <div
           id="intro"
           className="intro w-full h-screen py-8 flex flex-col lg:flex-row gap-8 justify-center items-center"

@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from "react";
 
-const CircleMouseFollower = ({ xscale = 1, yscale = 1 }) => {
+const MouseFollower = ({ xscale = 1, yscale = 1 }) => {
   const circleRef = useRef(null);
 
   useEffect(() => {
@@ -40,4 +40,4 @@ const CircleMouseFollower = ({ xscale = 1, yscale = 1 }) => {
   );
 };
 
-export default CircleMouseFollower;
+export default MouseFollower;
