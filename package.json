@@ -12,7 +12,6 @@
   "dependencies": {
     "@studio-freight/lenis": "^1.0.42",
     "@tabler/icons-react": "^3.20.0",
-    "clsx": "^2.1.1",
     "framer-motion": "^11.11.10",
     "gsap": "^3.12.5",
     "lenis": "^1.1.16",
@@ -23,7 +22,6 @@
     "react-router": "^6.28.0",
     "react-router-dom": "^6.27.0",
     "react-scroll": "^1.9.0",
-    "react-typed": "^2.0.12",
     "sheryjs": "^1.0.0-beta.0.1.8",
     "tailwind-merge": "^2.5.4"
   },

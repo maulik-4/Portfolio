@@ -13,8 +13,7 @@
     
     position: absolute;
     top:25%;
-  
-    color: black;
+    color: transparent;
     z-index: -10;
     -webkit-text-stroke: 1px #95c11e;
   }
