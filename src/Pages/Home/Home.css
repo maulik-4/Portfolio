@@ -1,25 +1,14 @@
-
 @font-face {
-    font-family: 'Stardom-Regular';
-    src: url('../../fonts/Stardom-Regular.eot') format('eot'),
-         url('../../fonts/Stardom-Regular.woff2') format('woff'),
-         url('../../fonts/Stardom-Regular.ttf') format('truetype');
-  }
-  @font-face {
-    font-family:ClashDisplay-Medium;
-    src: url(../../fonts/ClashDisplay-Medium.otf);
-  }
+  font-family: 'Stardom-Regular';
+  src: url("../../assets/fonts/Stardom-Regular.ttf");
+}
 
-
-.text {
+.text span{
     font-family: 'Stardom-Regular', sans-serif; 
   }
   .text h1 {
     font-family: 'Stardom-Regular', sans-serif;
   }
-  .text span:hover{
-    color: #FFD700;
-  } 
   
   .show h1{
     font-family: 'ClashDisplay-Medium', sans-serif;
@@ -43,19 +32,11 @@
   .info h3{
     position: relative;
   }
-  .info h3::before{
-    content: "Amazon";
-    position: absolute;
-    top: -6px;
-    left: -6px;
-    color: #212121;
-    z-index: -10;
-    -webkit-text-stroke: 1px #95c11e;
-  }
+  
   .info h3:hover {
     zoom: 1.02;
     transition: all ease-in-out 2s;
-    color: #FFD700;
+   
    }
    
 .web_btn {

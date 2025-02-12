@@ -1,10 +1,10 @@
 @font-face {
-    font-family: 'Sugar peachy';
-    src: url(../../fonts/Sugar_peachy.otf) format('opentype');
+    font-family: 'chillax';
+    src: url('../../assets/fonts/ClashDisplay-Variable.ttf');
 }
 
 .fire_text h1 {
-    font-family: 'Sugar peachy';
+    font-family: 'chillax';
     font-size: 5.5vw;
 }
 .fire_text h4{
@@ -17,5 +17,4 @@
     border-radius: 50px;
     border: solid white 2px;
     margin-top: 20px;
-    
 }

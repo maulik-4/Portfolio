@@ -31,7 +31,9 @@ const CircleMouseFollower = ({ xscale = 1, yscale = 1 }) => {
         zIndex: 9999, 
         backgroundColor: "white",
         borderRadius: "50%",
+        mixBlendMode: "difference",
         pointerEvents: "none", 
+        
         transition: "all cubic-bezier(0.19, 1, 0.22, 1) 1s",
       }}
     ></div>

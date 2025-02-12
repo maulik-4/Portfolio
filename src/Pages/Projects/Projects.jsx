@@ -101,7 +101,7 @@ function Projects() {
 
         </div>
       <div className="fixed top-[10vh]  left-0 w-screen text-center h-screen flex flex-col items-center justify-center bg-opacity-90 text-white">
-        <h1 className="Project_text text-[8vw] font-bold mb-6">Welcome to My World</h1>
+        <h1 className="Project_text relative text-[8vw] font-bold mb-6">Welcome to My World</h1>
         <p className="text-[3vw]">Explore the Beauty of Front End</p>
       </div>
      

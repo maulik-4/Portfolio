@@ -1,13 +1,13 @@
-import React from 'react'
-import { useEffect } from 'react';
-import Loader from '../../Componets/Loader/Loader'
-import mine from '../../assets/mine.jpg'
+import React, { useEffect } from 'react';
+import Loader from '../../Componets/Loader/Loader';
+import mine from '../../assets/mine.jpg';
 import CircleMouseFollower from '../../Componets/mousefollower/mousefollower';
-import { IoIosArrowForward, IoIosArrowRoundForward } from "react-icons/io";
+import { IoIosArrowForward } from "react-icons/io";
 import home_video from "../../assets/homepage.mp4";
-import './Home.css'
+import './Home.css';
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import TypingEffect from '../../Componets/TypingEffect/TypingEffect';
 gsap.registerPlugin(ScrollTrigger);
 
 function Home() {
@@ -33,12 +33,11 @@ function Home() {
         gsap.to(".show", {
           x: 40,
           duration: 5,
-          
           scrollTrigger: {
             trigger: ".show",
             start: "top 50%",
             end: "bottom bottom",
-            scrub : 0,
+            scrub: 0,
           },
         });
       }
@@ -53,17 +52,16 @@ function Home() {
       applyScrollTrigger();
     });
   }, []);
+
   return (
     <div className='overflow-hidden'>
-      <Loader/>
-       
+      <Loader />
       <div className="div bg-black text-white">
-      <CircleMouseFollower xscale={.2} yscale={.2} />
-      <div
+        <CircleMouseFollower xscale={.2} yscale={.2} />
+        <div
           id="intro"
-          className="intro w-full h-screen  py-8 flex flex-col lg:flex-row gap-8 justify-center items-center"
+          className="intro w-full h-screen py-8 flex flex-col lg:flex-row gap-8 justify-center items-center"
         >
-          
           <div className="pic opacity-0">
             <img
               src={mine}
@@ -73,8 +71,7 @@ function Home() {
           </div>
           <div className="info w-full lg:w-1/2 text-center lg:text-left">
             <h1 className="text opacity-0 text-[8vw] lg:text-[5vw] leading-tight">
-              Hi, I am <span>Maulik Vijay</span>, a Professional Front-end
-              Developer
+              Hi I am <span> <TypingEffect text="Maulik Vijay" speed={100} delay={2000}/></span> a Professional Front-end Developer
             </h1>
           </div>
         </div>
@@ -83,7 +80,7 @@ function Home() {
           id="quote"
           className="show mt-[10vw] lg:-translate-x-full h-screen items-center text-center overflow-hidden flex flex-col"
         >
-          <div className="k_first  justify-center flex flex-row">
+          <div className="k_first justify-center flex flex-row">
             <h1 className="flex items-center ">
               <span>
                 <IoIosArrowForward />
@@ -109,14 +106,14 @@ function Home() {
             <h1>Now.</h1>
           </div>
         </div>
-        <div className="web flex flex-col md:flex-row  justify-center px-[10vw] min-h-screen w-full relative">
+        <div className="web flex flex-col md:flex-row justify-center px-[10vw] min-h-screen w-full relative">
           <div className="web-background-layer"></div>{" "}
           {/* Nested div for background layer */}
           <div className="web_left w-full md:w-[50%] flex flex-col gap-[3vw]">
             <h1>Web design & development</h1>
             <div className="flex">
               <button className="web_btn">Creative Web design</button>
-              <button className="web_btn">Webdevelopment</button>
+              <button className="web_btn">Web development</button>
               <button className="web_btn">E-commerce</button>
             </div>
             <div>
@@ -136,10 +133,9 @@ function Home() {
             ></video>
           </div>
         </div>
-
       </div>
     </div>
-  )
+  );
 }
 
-export default Home
+export default Home;
