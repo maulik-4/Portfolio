@@ -1,5 +1,5 @@
 import React from 'react'
-import MouseFollower from '../../Components/MouseFollower/MouseFollower'
+import MouseFollower from '../../Components/MouseFollower/MouseFollower';
 import { FaInstagram } from "react-icons/fa";
 import { CiLinkedin } from "react-icons/ci";
 import { SiGmail } from "react-icons/si";
