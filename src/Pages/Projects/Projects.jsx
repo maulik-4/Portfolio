@@ -1,9 +1,8 @@
 import React, { useEffect } from "react";
-import Lenis from "@studio-freight/lenis";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "./Project.css";
-import MouseFollower from '../../Components/Mousefollower/MouseFollower';
+import MouseFollower from '../../Components/MouseFollower/MouseFollower';
 
 
 import project1 from "../../assets/projects/project1.png"
