@@ -1,57 +1,51 @@
 import React, { useEffect } from 'react';
 import Loader from '../../Components/Loader/Loader';
 import mine from '../../assets/mine.jpg';
-import MouseFollower from '../../Components/MouseFollower/MouseFollower'; // Corrected import path
+import MouseFollower from '../../Components/MouseFollower/MouseFollower';
 import { IoIosArrowForward } from "react-icons/io";
 import home_video from "../../assets/homepage.mp4";
 import './Home.css';
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import TypingEffect from '../../Components/TypingEffect/TypingEffect';
+import { useMediaQuery } from 'react-responsive';
+
 gsap.registerPlugin(ScrollTrigger);
 
 function Home() {
+  const isDesktopOrLaptop = useMediaQuery({ query: '(min-width: 1024px)' });
+  const isMobile = useMediaQuery({ query: '(max-width: 1023px)' });
+
   useEffect(() => {
     gsap.to(".text", {
       y: 40,
-      opacity: 1, // Add opacity to fade in
+      opacity: 1,
       delay: 7,
-      duration: 1.5, // Duration for a smoother transition
-      ease: "power2.out", // Add easing for a smoother effect,
-      stagger: 0.2, // Add stagger for a smoother effect,
+      duration: 1.5,
+      ease: "power2.out",
+      stagger: 0.2,
     });
     gsap.to(".pic", {
       y: 40,
-      opacity: 1, // Add opacity to fade in
+      opacity: 1,
       delay: 7,
-      duration: 1.5, // Duration for a smoother transition
-      ease: "power2.out", // Add easing for a smoother effect
+      duration: 1.5,
+      ease: "power2.out",
     });
-    const applyScrollTrigger = () => {
-      if (window.innerWidth >= 1024) {
-        // Example: Apply only on screens wider than 1024px
-        gsap.to(".show", {
-          x: 40,
-          duration: 5,
-          scrollTrigger: {
-            trigger: ".show",
-            start: "top 50%",
-            end: "bottom bottom",
-            scrub: 0,
-          },
-        });
-      }
-    };
 
-    // Run on page load
-    applyScrollTrigger();
-
-    // Optionally reapply on window resize
-    window.addEventListener("resize", () => {
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill()); // Remove existing ScrollTriggers
-      applyScrollTrigger();
-    });
-  }, []);
+    if (isDesktopOrLaptop) {
+      gsap.to(".show", {
+        x: 40,
+        duration: 5,
+        scrollTrigger: {
+          trigger: ".show",
+          start: "top 50%",
+          end: "bottom bottom",
+          scrub: 0,
+        },
+      });
+    }
+  }, [isDesktopOrLaptop]);
 
   return (
     <div className='overflow-hidden'>
@@ -78,7 +72,7 @@ function Home() {
 
         <div
           id="quote"
-          className="show mt-[10vw] lg:-translate-x-full h-screen items-center text-center overflow-hidden flex flex-col"
+          className={`show mt-[10vw] lg:-translate-x-full h-screen items-center text-center overflow-hidden flex flex-col ${isMobile ? '' : 'animate'}`}
         >
           <div className="k_first justify-center flex flex-row">
             <h1 className="flex items-center ">

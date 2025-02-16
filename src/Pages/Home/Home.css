@@ -3,6 +3,10 @@
   src: url("../../assets/fonts/Stardom-Regular.ttf");
 }
 
+body.loader-active {
+  overflow: hidden;
+}
+
 .text span{
     font-family: 'Stardom-Regular', sans-serif; 
   }
