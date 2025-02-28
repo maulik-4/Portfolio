@@ -7,11 +7,14 @@ import Projects from './Pages/Projects/Projects';
 import Lenis from 'lenis'
 import './App.css'
 import 'lenis/dist/lenis.css'
+import SmoothScroll from './Components/SmoothScroll/SmoothScroll';
 
 const App = () => {
  
   return (
-    <Router>
+    <>
+     <SmoothScroll/>
+     <Router>
      <Navbar/> 
      
       <Routes>
@@ -21,6 +24,7 @@ const App = () => {
         <Route path="/contact" element={<Contact />} />
       </Routes>
     </Router>
+    </>
   );
 };
 
