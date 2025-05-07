@@ -17,22 +17,35 @@ function Home() {
   const isMobile = useMediaQuery({ query: '(max-width: 1023px)' });
 
   useEffect(() => {
-    gsap.to(".text", {
-      y: 40,
-      opacity: 1,
-      delay: 7,
-      duration: 1.5,
-      ease: "power2.out",
-      stagger: 0.2,
-    });
-    gsap.to(".pic", {
-      y: 40,
-      opacity: 1,
-      delay: 7,
-      duration: 1.5,
-      ease: "power2.out",
-    });
+    // Listen for loader completion event
+    const handleLoaderComplete = () => {
+      // Start content animations once loader is complete
+      gsap.to(".text", {
+        y: 40,
+        opacity: 1,
+        delay: 0.5, 
+        duration: 1.5,
+        ease: "power2.out",
+        stagger: 0.2,
+      });
+      gsap.to(".pic", {
+        y: 40,
+        opacity: 1,
+        delay: 0.5, // Shorter delay since we're triggering after loader
+        duration: 1.5,
+        ease: "power2.out",
+      });
+    };
 
+    // If loader already completed, run animations immediately
+    if (window.loaderCompleteTime) {
+      handleLoaderComplete();
+    } else {
+      // Otherwise wait for the event
+      window.addEventListener('loaderComplete', handleLoaderComplete);
+    }
+
+    // Rest of your existing useEffect code for ScrollTrigger animations
     if (isDesktopOrLaptop) {
       gsap.to(".show", {
         x: 40,
@@ -45,6 +58,10 @@ function Home() {
         },
       });
     }
+
+    return () => {
+      window.removeEventListener('loaderComplete', handleLoaderComplete);
+    };
   }, [isDesktopOrLaptop]);
 
   return (
