@@ -20,12 +20,13 @@ import project13 from "../../assets/projects/project13.png"
 import project14 from "../../assets/projects/project14.png"
 import project15 from "../../assets/projects/project15.png"
 import project16 from "../../assets/projects/project16.png"
-import Loader from '../../Components/Loader/Loader'
-import Fire from '../../Components/Fire/Fire'
+import { useMediaQuery } from 'react-responsive';
+import MobileProjects from './MobileProjects';
 
 gsap.registerPlugin(ScrollTrigger);
 
 function Projects() {
+  const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
   useEffect(() => {
     const elements = document.querySelectorAll(".elem");
     elements.forEach((elem) => {
@@ -66,25 +67,81 @@ function Projects() {
     };
   }, []);
 
+  // animate the big background text: parallax on scroll + subtle sheen
+  useEffect(() => {
+    const text = document.querySelector('.Project_text');
+    if (!text) return;
+
+    // parallax movement tied to scroll
+    gsap.fromTo(text, 
+      { yPercent: -12, rotation: -2, opacity: 0.7 },
+      { yPercent: 12, rotation: 2, opacity: 1, ease: 'none',
+        scrollTrigger: {
+          trigger: '.proj',
+          start: 'top top',
+          end: 'bottom top',
+          scrub: 0.6
+        }
+      }
+    );
+
+    // continuous subtle sheen by animating background-position
+    const sheen = gsap.to(text, {
+      backgroundPosition: '200% 50%',
+      duration: 6,
+      ease: 'sine.inOut',
+      repeat: -1,
+      yoyo: true
+    });
+
+    return () => {
+      if (sheen) sheen.kill();
+      // ScrollTrigger cleanup handled by the previous effect's return
+    };
+  }, []);
+
   return (
     <div>
-      <div className="proj w-full h-[200vh] bg-[#212121] overflow-hidden">
+      {isMobile ? (
+        <MobileProjects cards={[
+          { id: 1, src: project1, title: 'Project 1', description: 'A responsive web app', link: 'https://amazon-two-beta.vercel.app/' },
+          { id: 2, src: project2, title: 'Project 2', description: 'E-commerce UI', link: 'https://significo-flax.vercel.app/' },
+          { id: 3, src: project3, title: 'Project 3', description: 'Interactive landing', link: 'https://magma-fawn.vercel.app/' },
+          { id: 4, src: project4, title: 'Project 4', description: 'Agency site', link: 'https://oby-s-agency.vercel.app/' },
+          { id: 5, src: project5, title: 'Project 5', description: 'Portfolio build', link: 'https://oneandzero-reimagine-round2.vercel.app/' },
+          { id: 6, src: project6, title: 'Project 6', description: 'Creative site', link: 'https://magma-fawn.vercel.app/' },
+          { id: 7, src: project7, title: 'Project 7', description: 'Product showcase', link: 'https://alexy-mu.vercel.app/' },
+          { id: 8, src: project8, title: 'Project 8', description: 'Music app UI', link: 'https://music-ivory-one.vercel.app/' },
+          { id: 9, src: project9, title: 'Project 9', description: 'Restaurant site', link: 'https://restraunent.vercel.app/' }
+        ]} />
+  ) : (
+  <>
+  <div className="proj w-full h-[200vh] bg-[#212121] overflow-hidden">
         <MouseFollower xscale={.2} yscale={.2} />
         <div className="grid grid-cols-3 grid-rows-16 w-full h-screen">
           
           {/* Project 2 */}
-          <a href="https://significo-flax.vercel.app/" target="_blank" rel="noopener noreferrer" className="elem" style={{ "--r": 1, "--c": 7 }}>
+          <a href="https://significo-flax.vercel.app/" target="_blank" rel="noopener noreferrer" className="elem project-tile" style={{ "--r": 1, "--c": 7 }}>
             <img src={project2} className="w-full h-full object-cover" alt="Project 2" />
+            <div className="tile-overlay">
+              <button className="learn-btn" onClick={(ev) => { ev.stopPropagation(); /* opens same link in new tab */ window.open('https://significo-flax.vercel.app/', '_blank', 'noopener'); }}>Learn More</button>
+            </div>
           </a>
           
           {/* Project 3 */}
-          <a href="https://magma-fawn.vercel.app/" target="_blank" rel="noopener noreferrer" className="elem" style={{ "--r": 2, "--c": 2 }}>
+          <a href="https://magma-fawn.vercel.app/" target="_blank" rel="noopener noreferrer" className="elem project-tile" style={{ "--r": 2, "--c": 2 }}>
             <img src={project3} className="w-full h-full object-cover" alt="Project 3" />
+            <div className="tile-overlay">
+              <button className="learn-btn" onClick={(ev) => { ev.stopPropagation(); window.open('https://magma-fawn.vercel.app/', '_blank', 'noopener'); }}>Learn More</button>
+            </div>
           </a>
           
           {/* Project 4 */}
-          <a href="https://oby-s-agency.vercel.app/" target="_blank" rel="noopener noreferrer" className="elem" style={{ "--r": 2, "--c": 6 }}>
+          <a href="https://oby-s-agency.vercel.app/" target="_blank" rel="noopener noreferrer" className="elem project-tile" style={{ "--r": 2, "--c": 6 }}>
             <img src={project4} className="w-full h-full object-cover" alt="Project 4" />
+            <div className="tile-overlay">
+              <button className="learn-btn" onClick={(ev) => { ev.stopPropagation(); window.open('https://oby-s-agency.vercel.app/', '_blank', 'noopener'); }}>Learn More</button>
+            </div>
           </a>
           
           {/* Project 5 */}
@@ -156,9 +213,10 @@ function Projects() {
         <div className="fixed top-[10vh] left-0 w-screen text-center h-screen flex flex-col items-center justify-center bg-opacity-90 text-white pointer-events-none">
           <h1 className="Project_text relative text-[8vw] font-bold mb-6">Welcome to My World</h1>
           <p className="text-[3vw]">Explore the Beauty of Front End</p>
-        </div>
-      </div>
-      <Fire />
+  </div>
+  </div>
+      </>
+    )}
     </div>
   );
 }

@@ -9,3 +9,38 @@
 .animate-blink {
     animation: blink 0.7s infinite;
 }
+
+/* Loader specific tweaks */
+.loader {
+  z-index: 9999;
+}
+
+@media (max-width: 640px) {
+  .loader h1 {
+    font-size: 6vw !important;
+  }
+  .loader .w-16 {
+    width: 56px !important;
+    height: 56px !important;
+  }
+}
+
+/* Progress bar percent label adjustments */
+.loader-percent {
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+/* percent label styling fallback */
+.loader .text-xs.font-semibold {
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+@media (max-width: 420px) {
+  .loader .text-xs.font-semibold {
+    font-size: 11px;
+  }
+}
+
+/* ensure percent label doesn't go off-screen: clamp using transforms via inline style fallback */
+/* no-op fallback removed */

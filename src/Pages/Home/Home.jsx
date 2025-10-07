@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import Loader from '../../Components/Loader/Loader';
 import mine from '../../assets/mine.jpg';
 import MouseFollower from '../../Components/MouseFollower/MouseFollower';
 import { IoIosArrowForward } from "react-icons/io";
@@ -66,7 +65,6 @@ function Home() {
 
   return (
     <div className='overflow-hidden'>
-      <Loader />
       <div className="div bg-black text-white">
         <MouseFollower xscale={.2} yscale={.2} />
         <div

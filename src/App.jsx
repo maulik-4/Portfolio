@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './Components/Navbar/Navbar';
+import Loader from './Components/Loader/Loader';
 import Home from './Pages/Home/Home';
 import About from './Pages/About';
 import Contact from './Pages/Contact/Contact';
@@ -15,12 +16,13 @@ const App = () => {
     <>
      <SmoothScroll/>
      <Router>
-     <Navbar/> 
-     
+      <Loader />
+      <Navbar/>
+
       <Routes>
         <Route path="/" element={<Home/>} />
         <Route path ="/Projects" element = {<Projects />} />
-        
+
         <Route path="/contact" element={<Contact />} />
       </Routes>
     </Router>

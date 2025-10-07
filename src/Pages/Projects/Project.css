@@ -9,15 +9,57 @@
   .proj{
     z-index: 1;
   }
+  /* large decorative background text - improved positioning and subtlety */
   .Project_text{
-    
     position: absolute;
-    top:25%;
+    top: 12%;
+    left: 50%;
+    transform: translateX(-50%) rotate(-3deg);
     color: transparent;
-    z-index: -10;
-    -webkit-text-stroke: 1px #95c11e;
+    z-index: 0;
+    pointer-events: none;
+    font-weight: 900;
+    letter-spacing: 0.02em;
+    opacity: 0.9;
+    mix-blend-mode: overlay;
+    text-transform: uppercase;
+    /* gradient stroke fallback via background-clip */
+    background: linear-gradient(90deg, rgba(149,193,30,0.95), rgba(255,255,255,0.35));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-stroke: 1px rgba(149,193,30,0.22);
+    filter: drop-shadow(0 12px 24px rgba(0,0,0,0.6)) blur(0.2px);
+    transform-origin: center;
+    /* sheen background setup */
+    background-size: 300% 100%;
+    background-repeat: no-repeat;
+    background-position: 0% 50%;
+  }
+
+    /* responsive sizing for the decorative text */
+  @media (min-width: 1200px) {
+    .Project_text { font-size: 8.5rem; }
+  }
+  @media (min-width: 992px) and (max-width: 1199px) {
+    .Project_text { font-size: 6.8rem; }
+  }
+  @media (min-width: 768px) and (max-width: 991px) {
+    .Project_text { font-size: 5.2rem; }
+  }
+  @media (max-width: 767px) {
+    .Project_text { font-size: 4rem; opacity: 0.6; -webkit-text-stroke: 0.6px rgba(149,193,30,0.15); }
   }
   @font-face {
     font-family: Gilroy-ExtraBold;
     src: url(../../assets//fonts/Gilroy-ExtraBold.otf);
   }
+
+  /* Project tile overlay for Learn More button */
+  .project-tile { position: relative; display: block; overflow: hidden; }
+
+  .project-tile img { display: block; transition: transform 400ms ease; }
+  .project-tile:hover img { transform: scale(1.04); }
+
+  .tile-overlay { position: absolute; inset: 0; display:flex; align-items:flex-end; justify-content:center; padding:1rem; pointer-events:none; }
+  .tile-overlay .learn-btn { pointer-events:auto; background: rgba(0,0,0,0.6); color: #fff; border: 1px solid rgba(255,255,255,0.08); padding: 0.6rem 1rem; border-radius: 999px; font-weight:700; transition: transform 160ms ease, background 160ms ease; }
+  .tile-overlay .learn-btn:hover { transform: translateY(-4px); background: rgba(0,0,0,0.8); }

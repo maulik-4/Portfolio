@@ -7,3 +7,12 @@
     width: 100%;
     transition: 0.2s;
 }
+
+nav {
+    backdrop-filter: blur(6px);
+}
+
+@media (max-width: 768px) {
+    .nav_item { font-size: 14px; }
+    ul { padding-left: 2rem; padding-right: 2rem; }
+}
